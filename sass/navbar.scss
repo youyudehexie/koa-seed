@@ -1,0 +1,35 @@
+.navbar {
+  height: $nav-base-height;
+  background-color: $chrome-color;
+  padding: 8px 36px;  
+
+  .active {
+    color: $negative-active-color;
+    border-bottom: $negative-active-border;
+  }
+
+  .avatar {
+    width: $nav-avatar-size;
+    height: $nav-avatar-size;
+    border-radius: 50%;
+    padding-top: 7px;
+  }
+
+  a {
+    text-decoration: none;
+    padding: 16px 0;
+
+    &:hover {
+      border-bottom: $negative-border;
+      @include transition-duration(0.15s);
+    }
+  }
+
+  li {
+    float: right;
+    list-style-type: none;
+    line-height: $nav-base-height;
+    margin-right: $nav-side-space;
+  }
+}
+

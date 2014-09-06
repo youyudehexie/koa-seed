@@ -1,0 +1,39 @@
+.table-view {
+  .section {
+    padding-right: 40px;
+    margin-bottom: $block-margin-bottom;
+    height: $table-view-size;
+
+    &:hover {
+      background-color: #fff;      
+    }
+
+    img {
+      float: left;
+      margin-right: 40px;
+      width: $table-view-size;
+    }
+
+    h4 {
+      font-size: 33px;
+      font-weight: 400;
+      padding: 15px 0px;
+      margin: 0;
+      letter-spacing: 0.20px;
+    }
+
+    a {
+      color: $font-color-default;
+      text-decoration: none;
+      @include transition-duration(0.25s);
+    }
+
+  }  
+
+  .section:hover a {
+    margin-left: 5px;
+    @include transition-duration(0.25s);
+    color: $negative-active-color;
+    border-bottom: $negative-active-border;
+  }
+}

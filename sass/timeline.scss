@@ -1,0 +1,47 @@
+.timeline-section {
+  position: relative;
+  border-left: 4px solid #9b9b9b;
+  padding: 30px;
+  margin-left: 150px;
+
+  .timeline-date {
+    position: absolute;
+    top: 35px;
+    left: -130px;
+  }
+
+  .left-direction {
+    width:0;
+    height:0;  
+    line-height:0;  
+    border-width:15px;  
+    border-style:solid;  
+    border-color: transparent #fff transparent transparent;  
+    position: absolute;
+    top: 50px;
+    left: 0px;
+  }
+}
+
+.timeline-content {
+  background: $chrome-color;
+  padding: 15px;
+
+  p {
+  line-height: 30px;
+  }
+
+  h4 {
+    font-size: 33px;
+    font-weight: 400;
+    padding: 15px 0px;
+    margin: 0px;
+    letter-spacing: 0.16px;
+  }
+
+  a {
+    color: $font-color-default;
+    text-decoration: none;
+  }
+
+}

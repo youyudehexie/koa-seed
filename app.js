@@ -11,14 +11,8 @@ app.context.render = views(__dirname + '/views', {ext: 'ejs'});
 app.use(logger());
 app.use(router(app));
 
-//var blog = require('./controllers/blog');
-
 route(app);
-//
-//app.get('/', function *() {
-    //this.body = this.render('index');
-//})
 
 app.use(serve(__dirname + '/public'));
 
-app.listen(3010)
+app.listen(3012)

@@ -1,8 +1,9 @@
 var gulp = require('gulp');
 var sass = require('gulp-ruby-sass');
+var concatCss = require('gulp-concat-css');
 
 var paths = {
-  sass: './sass/*'
+  sass: './sass/*.scss'
 };
 
 //gulp.task('watch', function () {
@@ -10,11 +11,18 @@ var paths = {
 //});
 
 gulp.task('sass', function () {
-    return gulp.src('./sass/test.scss')
-      .pipe(sass())
+    return gulp.src('./sass/main.scss')
+      .pipe(sass({style: 'expanded', unixNewlines: true}))
       .on('error', function (err) { console.log(err.message); })
-      .pipe(gulp.dest('./public/css/dist'));
+      .pipe(gulp.dest('./public/css/'));
 });
+
+//gulp.task('concat-css', function () {
+    //gulp.src('./dist/css/**/*.css')
+        //.pipe(concatCss("./public/css/pc.css"))
+        //.pipe(gulp.dest('./public/css'));
+
+//});
 
 gulp.task('watch', function () {
     gulp.watch(paths.sass, ['sass']);

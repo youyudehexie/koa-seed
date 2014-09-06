@@ -1,0 +1,42 @@
+.footer {
+  background: $chrome-color;
+  padding: 80px 0;
+  text-align: center;
+  margin-top: 96px;
+
+  p {
+    margin: 57px 0;
+    letter-spacing: 0.8px;
+  }
+
+  li {
+    list-style-type: none;
+    margin-right: 16px;
+  }
+
+  .social {
+    margin: 0 auto;
+    width: 530px;
+    height: $social-icon-size;
+
+    .github {
+      width: $social-icon-size;
+      height: $social-icon-size;
+      background: url("/img/github-128-black.png") no-repeat center;
+    }
+
+    .v2ex {
+      width: $social-icon-size;
+      height: $social-icon-size;
+      background: url("/img/v2ex.png") no-repeat center;
+    }
+
+    .cnode {
+      width: 127px;
+      height: $social-icon-size;
+      background: url("/img/cnode.png") no-repeat center;
+    }
+ 
+  }
+
+}
