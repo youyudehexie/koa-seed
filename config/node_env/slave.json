@@ -1,0 +1,13 @@
+{
+    "mongodb": {
+        "name": "mongodb://173.255.221.143/westeros"
+    },
+    "redisPubsub": {
+        "port": "6379",
+        "host": "localhost" 
+    },
+    "redisQueue": {
+        "port": "6379",
+        "host": "localhost" 
+    }
+}

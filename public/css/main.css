@@ -653,6 +653,8 @@ p {
   font-size: 17px;
   font-weight: 100;
   line-height: 30px;
+  margin-bottom: 48px;
+  padding-bottom: 48px;
 }
 .blog .title {
   margin-bottom: 15px;

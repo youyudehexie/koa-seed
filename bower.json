@@ -1,0 +1,18 @@
+{
+  "name": "blog",
+  "version": "0.0.0",
+  "homepage": "https://github.com/youyudehexie/koa-seed",
+  "authors": [
+    "youyudehexie <405574395@qq.com>"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "html5-boilerplate": "~4.3.0",
+    "markdown": "~0.5.0",
+    "highlight": "~7.0.1"
+  }
+}

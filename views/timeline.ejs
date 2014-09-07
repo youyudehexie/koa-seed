@@ -12,11 +12,8 @@
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <link rel="stylesheet" href="css/main.css">
-	      <link rel="stylesheet" href="bower_components/highlight/src/styles/monokai.css">
-        <script src="bower_components/highlight/build/highlight.pack.js"></script>
-        <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script>
+        <link rel="stylesheet" href="/css/main.css">
+        <script src="/bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -28,22 +25,19 @@
         <% include navbar %>
         <div class="wrap">
           <div class="timeline">
-            <div class="timeline-section">
-              <div class="left-direction"></div>
-              <div class="point"> </div>
-              <p class="date timeline-date">2014年05月05日</p>
-              <div class="timeline-content">
-                <h4>
-                  <a href="/article">也谈基于NodeJS的全栈式开发</a>
-                </h4>
-                <p class="summary">不存在会现在Insert Buffer里面先合并操作，通常合并了几个之后，再同时插入到数据库中
-    不存在会现在Insert Buffer里面先合并操作，通常合并了几个之后，再同时插入到数据库中
-    不存在会现在Insert Buffer里面先合并操作，通常合并了几个之后，再同时插入到数据库中
-                </p>
+            <% articles.forEach(function (article) { %>
+              <div class="timeline-section">
+                <div class="left-direction"></div>
+                <div class="point"> </div>
+                <p class="date timeline-date"><%= article.created_at %></p>
+                <div class="timeline-content">
+                  <h4>
+                    <a href="/article"><%= article.title %></a>
+                  </h4>
+                  <p class="summary"><%= article.summary %></p>
+                </div>
               </div>
-            </div>
-
-            
+            <% })%>
           </div>
         </div>
         <% include footer %>

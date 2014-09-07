@@ -6,10 +6,6 @@ var paths = {
   sass: './sass/*.scss'
 };
 
-//gulp.task('watch', function () {
-    //gulp.watch(paths.sass, [''])
-//});
-
 gulp.task('sass', function () {
     return gulp.src('./sass/main.scss')
       .pipe(sass({style: 'expanded', unixNewlines: true}))
@@ -17,12 +13,6 @@ gulp.task('sass', function () {
       .pipe(gulp.dest('./public/css/'));
 });
 
-//gulp.task('concat-css', function () {
-    //gulp.src('./dist/css/**/*.css')
-        //.pipe(concatCss("./public/css/pc.css"))
-        //.pipe(gulp.dest('./public/css'));
-
-//});
 
 gulp.task('watch', function () {
     gulp.watch(paths.sass, ['sass']);

@@ -12,8 +12,8 @@
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <link rel="stylesheet" href="css/main.css">
-        <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+        <link rel="stylesheet" href="/css/main.css">
+        <script src="/bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -23,47 +23,31 @@
         <!-- Add your site or application content here -->
 
         <% include navbar %>
-
         <div class="wrap">
           <div class="table-view">
-            <div class="section">
-              <img src="img/nodejs-logo.png"/>
-              <h4>
-                <a href="/article">也谈基于NodeJS的全栈式开发</a>
-              </h4>
-              <div class="date">2014年05月05日</div>
-              <p class="summary">不存在会现在Insert Buffer里面先合并操作，通常合并了几个之后，再同时插入到数据库中</p>
+            <% articles.forEach(function (article) { %>
+              <div class="section">
+                <img src="<%= article.primary_image %>"/>
+                <h4>
+                  <a href="/blog/article/<%= article.prefix %>"><%= article.title %></a>
+                </h4>
+                <div class="date"><%= article.created_at %></div>
+                <p class="summary"><%= article.summary %></p>
+              </div>
+            <% }) %>
 
-            </div>
-
-            <div class="section">
-              <img src="img/nodejs-logo.png"/>
-              <h4>
-                <a href="/article">也谈基于NodeJS的全栈式开发</a>
-              </h4>
-              <div class="date">2014年05月05日</div>
-              <p class="summary">不存在会现在Insert Buffer里面先合并操作，通常合并了几个之后，再同时插入到数据库中</p>
-
-            </div>
-
-            <div class="section">
-              <img src="img/nodejs-logo.png"/>
-              <h4>
-                <a href="/article">也谈基于NodeJS的全栈式开发</a>
-              </h4>
-              <div class="date">2014年05月05日</div>
-              <p class="summary">不存在会现在Insert Buffer里面先合并操作，通常合并了几个之后，再同时插入到数据库中</p>
-
-            </div>
           </div>
             <div class="pagination">
-              <div class="fl"><a href="#">上一页</a></div>
-              <div class="fr"><a href="#">下一页</a></div>
+              <% if(articles.length > 5 && parseInt(page) != 0) { %>
+                <div class="fl"><a href="/blog/page/<%= parseInt(page) - parseInt(1) %>">上一页</a></div>
+              <% } %>
+
+              <% if(articles.length > 5 && parseInt(page) == 0) { %>
+                <div class="fr"><a href="/blog/page/<%= parseInt(page) + parseInt(1) %>">下一页</a></div>
+              <% } %>
               <div class="clearfix"></div>
             </div>
-          
         </div>
-
 
         <% include footer %>
 

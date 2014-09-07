@@ -10,7 +10,15 @@
     "koa-logger": "^1.2.2",
     "koa-router": "^3.3.1",
     "koa-static": "^1.4.6",
-    "co-view": "0.0.1"
+    "co-view": "0.0.1",
+    "underscore": "^1.7.0",
+    "mysql": "^2.4.3",
+    "thunkify-wrap": "^1.0.2",
+    "ready": "^0.1.1",
+    "multiline": "^1.0.0",
+    "moment": "^2.8.3",
+    "markdown": "^0.5.0",
+    "marked": "^0.3.2"
   },
   "devDependencies": {
     "gulp": "^3.8.7",

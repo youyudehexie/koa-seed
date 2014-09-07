@@ -1,0 +1,9 @@
+{
+    "mysql": {
+        "name": "blog",
+        "host": "localhost",
+        "user": "hexie",
+        "passwd": "123456",
+        "port": "3306"
+    }
+}

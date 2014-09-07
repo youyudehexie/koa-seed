@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/bower_components/highlight/src/styles/monokai.css">
+        <script src="/bower_components/highlight/build/highlight.pack.js"></script>
+        <script src="http://upcdn.b0.upaiyun.com/libs/modernizr/modernizr-2.7.1.min.js"></script>
+        <script>
+            hljs.initHighlightingOnLoad();
+        </script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+
+        <% include navbar %>
+        <div class="wrap">
+          <div class="blog">
+            <div class="title"><%= article.title %></div>
+            <p class="date"><%= article.created_at %></p>
+              <%- article.content %>
+          </div>
+          <div class="article-share">
+            <div class="qrcode fl">
+              <img src="/img/qrcode.jpg" />
+              <p>扫一扫，关注我</p>
+            </div>
+
+            <div class="article-more fl">
+              <h3>相关文章</h3>
+              <% recommands.forEach(function (recommand) { %>
+                <li><a href="/blog/article/<%= recommand.prefix %>"><%= recommand.title %></a></li>
+              <% }) %>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+
+          <div class="comment">
+
+            <div id="disqus_thread"></div>
+              <script type="text/javascript">
+                  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                  var disqus_shortname = 'youyudehexie'; // required: replace example with your forum shortname
+
+                  /* * * DON'T EDIT BELOW THIS LINE * * */
+                  (function() {
+                      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                  })();
+              </script>
+              <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+              <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+          </div>
+        </div>
+
+        <% include footer %>
+    </body>
+</html>

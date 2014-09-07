@@ -1,0 +1,18 @@
+{
+  "appenders": [
+    {
+      "type": "file",
+      "filename": "./logs/drogo.log",
+      "maxLogSize": 1048576,
+      "backups": 5,
+      "category": "run-log"
+    },
+    {
+      "type": "console"
+    }
+  ],
+  "levels": {
+    "run-log": "INFO"
+  },
+  "replaceConsole": true
+}
