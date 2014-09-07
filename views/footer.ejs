@@ -1,10 +1,40 @@
-
 <div class="footer">
   <ul class="social">
-    <li class="github fl"><a href="#"></a></li>
-    <li class="v2ex fl"><a href="#"></a></li>
-    <li class="cnode fl"><a href="#"></a></li>
+    <a href="https://github.com/youyudehexie"><li class="github fl"></li></a>
+    <a href="http://www.v2ex.com/member/youyudehexie"><li class="v2ex fl"></li></a>
+    <a href="http://cnodejs.org/user/hexie"><li class="cnode fl"></li></a>
   </ul>
 
   <p>© 2014 youyudehexie 粤ICP备1302530</p>
 </div>
+
+<script>
+  function getActiveName() {
+    var url = window.location.href;
+    var activeNav = 'Home';
+    var navItems = [
+      {match: 'timeline', active: 'Archive'},
+      {match: 'archive', active: 'Archive'},
+      {match: 'profile', active: 'Profile'}
+    ];
+
+    for (var i = 0; i < navItems.length; i++) {
+      if (url.search(navItems[i].match) > 0) {
+        activeNav = navItems[i].active;
+        break;
+      }
+    }
+    return activeNav;
+  }
+
+  function setActive(name) {
+    var navs = document.querySelectorAll('#nav a');
+    for (var i=0; i< navs.length; i++) {
+        if (navs[i].innerText == name) {
+            navs[i].className = 'active';
+        }
+    }
+  }
+  var activeName = getActiveName();
+  setActive(activeName);
+</script>

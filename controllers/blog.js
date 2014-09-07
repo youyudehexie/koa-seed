@@ -22,7 +22,7 @@ exports.index = function *() {
         return article;
     });
 
-    this.body = yield this.render('index', {articles: articles, page: page});
+    this.body = yield this.render('index', {articles: articles, page: page, route: 'index'});
 };
 
 exports.article = function *(next) {
