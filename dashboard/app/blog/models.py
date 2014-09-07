@@ -32,5 +32,10 @@ class Article(models.Model):
     updated_at = models.DateField(auto_now_add=True, auto_now=True)
     created_at = models.DateField(auto_now_add=True, db_index=True)
 
+    @classmethod
+    def create(cls, category):
+        category.count += 1
+        category.save()
+
     def __str__(self):
         return self.title
