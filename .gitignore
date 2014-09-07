@@ -1,6 +1,5 @@
 node_modules/*
 .sass-cache/*
 public/bower_components/*
-public/dist/*
 dashboard/env/*
 *.pyc
